@@ -3,6 +3,10 @@
   /* border: 1px solid red; */
   
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 body {
   margin: 0;
@@ -10,7 +14,6 @@ body {
   font-weight: 200;
   font-size: .8em;
   
-
 }
 
 header {
@@ -67,11 +70,37 @@ header {
 
 main {
   position: relative;
+  
 }
+
+section {
+  height: 100vh;
+  scroll-behavior: smooth;
+
+  animation-name: goUp;
+  animation-duration: 5s;
+  animation-delay: .5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+
+}
+
+/* @keyframes goUp {
+  0% { transform: translateY(0);}
+  50% { transform: translateY(0); }
+  100% { transform: translateY(-100%);}
+
+} */
 
 .pink-section {
   max-width: 100%;
 }
+
+.pink-section h1 {
+  animation-delay: 2s;
+}
+
 
 .bg-img {
   height: 100vh;
@@ -87,7 +116,27 @@ h1 {
   margin-bottom: 60px;
   font-size: 3em;
   font-weight: 500;
+
+  animation-name: goingLeft;
+  animation-duration: 1.5s;
+  animation-delay: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: initial;
+  animation-direction: normal;
+
 }
+
+
+@keyframes goingLeft {
+  0% { transform: translateX(0); opacity: 1;}
+  50% { opacity: 50%;}
+  75% { opacity: 0;}
+  100% { transform: translateX(-100%); opacity: 0;}
+
+}
+
+
 h3 {
   margin-top: 10px;
   font-size: 4em;
@@ -114,25 +163,134 @@ h3 {
   top: -100px;
   z-index: 1;
   
+
+ 
 }
 
-.color-box {
-  padding: 90px 60px 0 60px;
-  background-color: rgb(255, 236, 239);
-}
-.green-article .color-box {
+
+
+.green-section .color-div {
+  
+  width: 550px;
+  height:400px;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -2;
+  
   background-color:  rgb(214, 230, 219);
 
+
+  animation-name: heightChange;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+
+  animation-direction: normal;
+
 }
+
+.pink-section .color-div {
+  width: 550px;
+  height:400px;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -2;
+  
+  background-color: rgb(255, 236, 239);
+
+
+  animation-name: heightChange;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+
+  animation-direction: normal;
+
+}
+
+
+@keyframes heightChange {
+0% { height: 400px; transform: translateY(0%);}
+
+50% {height: 750px; transform: translateY(-100%);}
+100% {height: 750px; transform: translateY(-100%);}
+
+
+}
+
+
+
+
+
+
+
+.color-box {
+  position: relative;
+  left: 90px;
+  top: 100px;
+  z-index: 4;
+
+
+  animation-name: goUp-text;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+
+  animation-direction: normal;
+
+}
+
+@keyframes goUp-text {
+  0% { transform: translateY(0%);}
+  
+  50% { transform: translateY(-100%);}
+  100% { transform: translateY(-100%);}
+ 
+}
+
+
+
+
+/* .green-article .color-box {
+  background-color:  rgb(214, 230, 219);
+
+} */
 
 .next-link {
   margin-top: -40px;
   margin-left: 400px;
+
+
+  position: absolute;
+  bottom: 0px;
+  z-index: 3;
   display: inline-block;
  
   text-align: right; 
 
+
+
+  animation-name: goUp-link;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+
+  animation-direction: normal;
+
 }
+
+@keyframes goUp-link {
+  0% {transform: translateY(0%);}
+  
+  50% { transform: translateY(-300%);}
+  100% { transform: translateY(-300%);}
+ 
+  
+}
+
 .next {
   width: 40px;
   display: inline-block;
